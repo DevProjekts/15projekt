@@ -1,11 +1,5 @@
 """Crypto: tool for encrypting and decrypting messages.
 Exercises
-1. Review 'ord' and 'chr' functions and letter-to-number mapping.
-2. Explain what happens if you use key 26.
-3. Find a way to decode a message without a key.
-4. Encrypt numbers.
-5. Make the encryption harder to decode.
-Adapted from code in https://inventwithpython.com/chapter14.html
 """
 
 
