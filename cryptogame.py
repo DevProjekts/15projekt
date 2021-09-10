@@ -1,20 +1,18 @@
-"""Crypto: tool for encrypting and decrypting messages.
-Exercises
-"""
+#Crypto: tool for encrypting and decrypting messages.
 
 
+#Encrypt message with key
 def encrypt(message, key):
-    "Encrypt message with key."
     result = ''
 
-    # Iterate letters in message and encrypt each individually.
+    #Iterate letters in message and encrypt each individually.
 
     for letter in message:
         if letter.isalpha():
 
-            # Letters are numbered like so:
-            # A, B, C - Z is 65, 66, 67 - 90
-            # a, b, c - z is 97, 98, 99 - 122
+            #Letters are numbered like this:
+            #A, B, C - Z is 65, 66, 67 - 90
+            #a, b, c - z is 97, 98, 99 - 122
 
             num = ord(letter)
 
@@ -24,7 +22,7 @@ def encrypt(message, key):
                 assert letter.islower()
                 base = ord('a')
 
-            # The encryption equation:
+            #The encryption equation:
 
             num = (num - base + key) % 26 + base
 
@@ -32,7 +30,7 @@ def encrypt(message, key):
 
         elif letter.isdigit():
 
-            # TODO: Encrypt digits.
+            #Encrypting the digits.
             result += letter
 
         else:
@@ -40,19 +38,16 @@ def encrypt(message, key):
 
     return result
 
-
+#We are decrypting message with a key
 def decrypt(message, key):
-    "Decrypt message with key."
     return encrypt(message, -key)
 
-
+#Decoding messages without a key
 def decode(message):
-    "Decode message without key."
-    pass  # TODO
+    pass  
 
-
+#Geting the key from user
 def get_key():
-    "Get key from user."
     try:
         text = input('Enter a key (1 - 25): ')
         key = int(text)
